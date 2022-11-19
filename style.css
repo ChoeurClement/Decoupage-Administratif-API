@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #d5d5d5;
+}
+
+h1{
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem;
+}
+
+footer{
+    background-color: grey;
+    line-height: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+article a{
+    margin: 2rem;
+    font-size: 4rem;
+}
+
+article img{
+    filter: blur(0.75rem);
+    width: 90%;
+}
+
+.container{
+    margin: 2rem;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.container p{
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    font-family: 'Rubik Bubbles', sans-serif;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    color: black;
+    font-size: 4rem;
+    width: 100%;
+}
+
+.container #departement{
+    font-size: 3rem;
+}
+
+#resultAPI{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: whitesmoke;
+    line-height: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+ul{
+    border: 1px solid black;
+    list-style-type: none;
+    width: 80%;
+    background-color: lightgray;
+}
+
+ul li {
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+    border-bottom: 0px;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    overflow-wrap: break-word;
+}
+
+ul li:last-child {
+    border-bottom: none;
+    padding-bottom: 1rem;
+}
+
+aside{
+    background-color: white;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+aside p{
+    background-color: rgb(70, 70, 70);
+    color: white;
+    line-height: 3rem;
+    padding-left: 1rem;
+}
+
+aside input{
+    padding: 1rem;
+    margin: 1rem;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px){
+
+    article{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container{
+        width: 41%;
+    }
+
+    section{
+        display: flex;
+    }
+}
+   
