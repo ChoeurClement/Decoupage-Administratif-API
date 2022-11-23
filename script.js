@@ -10,6 +10,15 @@ function ajaxAPI(url, methode, callback) {
     });
 }
 
+function ajaxGet(url, callback) {
+    let promise = fetch(url, {method : "GET",})
+    .then((resp) => resp.json())
+    .then(function(data) {callback(data) ;})
+    .catch(function(error) {
+    console.error(error + " " + url) ;
+    }) ;
+}
+
 function reponseExplore(objet) {
     let contenu;
     contenu = '<ul>';
@@ -35,10 +44,10 @@ document.getElementById("myBtn").addEventListener("click", function(e) {
     // Message d'attente
     resultAPI.innerHTML = "Calculs en cours...";
 
-    // Récupération Region
+    // Récupération de la catégorie
     let search = document.getElementById("search").value;
-    let categorie = document.getElementById("page").value;
-    console.log(categorie);
+    let categorie = document.getElementById("page").value; 
+
     // Définition du endPoint
     let endPoint;
     if(categorie == "region"){
@@ -49,6 +58,8 @@ document.getElementById("myBtn").addEventListener("click", function(e) {
         endPoint = "https://geo.api.gouv.fr/epcis?nom=" + search;
     } else if(categorie == "commune"){
         endPoint = "https://geo.api.gouv.fr/communes?nom=" + search;
+    } else if(categorie == "risque"){
+        endPoint = "https://www.georisques.gouv.fr/api/v1/gaspar/azi?code_insee=" + search;
     } else{
         console.log("Erreur, la page n'est pas connue")
     }
